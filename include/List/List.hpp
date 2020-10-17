@@ -8,10 +8,23 @@
 #ifndef List_h
 #define List_h
 
+#include "../Math/Number.hpp"
+
 namespace mpt {
 
 template <typename ...T>
 struct list {};
+
+
+template <typename ...T>
+struct is_list {
+    using value = false_;
+};
+
+template <typename ...T>
+struct is_list<list<T...>> {
+    using value = true_;
+};
 
 } // mpt
 
