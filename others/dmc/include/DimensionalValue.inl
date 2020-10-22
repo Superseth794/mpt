@@ -11,19 +11,19 @@
 namespace dmc {
 
 template <typename T, typename ...Dim_T>
-DimentionalValue<T, Dim_T...>::DimentionalValue(DimentionalValue<T, Dim_T...> const& value) :
+DimensionalValue<T, Dim_T...>::DimensionalValue(DimensionalValue<T, Dim_T...> const& value) :
 m_value(value.m_value)
 {
 }
 
 template <typename T, typename ...Dim_T>
-DimentionalValue<T, Dim_T...>::DimentionalValue(T value) :
+DimensionalValue<T, Dim_T...>::DimensionalValue(T value) :
 m_value(std::move(value))
 {
 }
 
 template <typename T, typename ...Dim_T>
-T const& DimentionalValue<T, Dim_T...>::getValue() const {
+T const& DimensionalValue<T, Dim_T...>::getValue() const {
     return m_value;
 }
 

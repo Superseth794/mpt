@@ -11,12 +11,12 @@
 namespace dmc {
 
 template <typename T, typename ... Dim_T>
-class DimentionalValue {
+class DimensionalValue {
 public:
-    DimentionalValue(T value);
-    DimentionalValue(DimentionalValue<T, Dim_T...> const& value);
+    DimensionalValue(T value);
+    DimensionalValue(DimensionalValue<T, Dim_T...> const& value);
     
-    ~DimentionalValue() = default;
+    ~DimensionalValue() = default;
     
     inline T const& getValue() const;
     
