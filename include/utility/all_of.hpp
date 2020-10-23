@@ -24,7 +24,7 @@ struct all_of<T, XS...> {
 
 template <typename T>
 struct all_of<T> {
-    using value = typename T::value;
+    using value = std::conditional_t<T::value, true_, false_>;
 };
 
 }
