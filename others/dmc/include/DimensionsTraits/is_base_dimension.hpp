@@ -46,12 +46,12 @@ struct is_base_dimension<dim::base_kelvin> {
 
 template <>
 struct is_base_dimension<dim::base_mole> {
-    using value = mtp::true_;
+    using value = mpt::true_;
 };
 
 template <>
 struct is_base_dimension<dim::base_candela> {
-    using value = mtp::true_;
+    using value = mpt::true_;
 };
 
 }
