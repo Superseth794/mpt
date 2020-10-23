@@ -53,18 +53,6 @@ private:
 
 namespace dmc {
 
-//template <typename name_t, typename degree_t, typename ...T>
-//struct dimension<dimension<name_t, degree_t>, T...>{
-//    using sub_dimensions = mpt::list<dimension<name_t, degree_t>, T...>;
-//
-//private:
-//    using is_constructibe = typename std::enable_if<
-//                                        mpt::all_of<
-//                                            typename is_single_dimension<dimension<name_t, degree_t>>::value,
-//                                            typename is_single_dimension<T>::value...
-//                                        >::value::value, mpt::list<T...>>::type;
-//};
-
 template <typename ...T>
 struct dimension {
     using sub_dimensions = mpt::list<T...>;
@@ -76,7 +64,6 @@ private:
                         typename is_single_dimension<T>::value...
                     >::value::value, mpt::list<T...>>::type;
 };
-
 
 }
 
