@@ -12,17 +12,18 @@
 
 #include "../../../include/List/List.hpp"
 #include "../../../include/Math/Number.hpp"
+#include "../../../include/utility/all_of.hpp"
 
-namespace dmc::dim::details {
+namespace dmc::dim {
 
     // SI dimensions
-    struct meter        {};
-    struct kilogramme   {};
-    struct second       {};
-    struct ampere       {};
-    struct kelvin       {};
-    struct mole         {};
-    struct candela      {};
+    struct base_meter        {};
+    struct base_kilogramme   {};
+    struct base_second       {};
+    struct base_ampere       {};
+    struct base_kelvin       {};
+    struct base_mole         {};
+    struct base_candela      {};
 
 }
 

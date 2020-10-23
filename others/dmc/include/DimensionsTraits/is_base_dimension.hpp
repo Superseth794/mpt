@@ -16,25 +16,25 @@ template <typename T>
 struct is_base_dimension : std::false_type {};
 
 template <>
-struct is_base_dimension<dim::details::meter> : std::true_type {};
+struct is_base_dimension<dim::base_meter> : std::true_type {};
 
 template <>
-struct is_base_dimension<dim::details::kilogramme> : std::true_type {};
+struct is_base_dimension<dim::base_kilogramme> : std::true_type {};
 
 template <>
-struct is_base_dimension<dim::details::second> : std::true_type {};
+struct is_base_dimension<dim::base_second> : std::true_type {};
 
 template <>
-struct is_base_dimension<dim::details::ampere> : std::true_type {};
+struct is_base_dimension<dim::base_ampere> : std::true_type {};
 
 template <>
-struct is_base_dimension<dim::details::kelvin> : std::true_type {};
+struct is_base_dimension<dim::base_kelvin> : std::true_type {};
 
 template <>
-struct is_base_dimension<dim::details::mole> : std::true_type {};
+struct is_base_dimension<dim::base_mole> : std::true_type {};
 
 template <>
-struct is_base_dimension<dim::details::candela> : std::true_type {};
+struct is_base_dimension<dim::base_candela> : std::true_type {};
 
 }
 
