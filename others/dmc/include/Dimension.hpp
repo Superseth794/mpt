@@ -17,13 +17,13 @@
 namespace dmc::dim {
 
     // SI dimensions
-    struct base_meter        {};
-    struct base_kilogramme   {};
-    struct base_second       {};
     struct base_ampere       {};
-    struct base_kelvin       {};
-    struct base_mole         {};
     struct base_candela      {};
+    struct base_kelvin       {};
+    struct base_kilogramme   {};
+    struct base_meter        {};
+    struct base_mole         {};
+    struct base_second       {};
 
 }
 
