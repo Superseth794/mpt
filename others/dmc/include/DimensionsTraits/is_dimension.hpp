@@ -20,13 +20,11 @@
 
 namespace dmc {
 
-template <typename ...T>
+template <typename T>
 struct is_dimension {
     using value = std::conditional_t<
-                    mpt::all_of<
-                        typename mpt::or_<
-                            typename is_single_dimension<T>::value, typename is_compound_dimension<T>::value
-                        >::value...
+                    mpt::or_<
+                        typename is_single_dimension<T>::value, typename is_compound_dimension<T>::value
                     >::value::value, mpt::true_, mpt::false_>;
 };
 
