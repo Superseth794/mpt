@@ -15,16 +15,8 @@
 namespace mpt {
 
 template <typename ...T>
-struct all_of {};
-
-template <typename T, typename ...XS>
-struct all_of<T, XS...> {
-    using value = std::conditional_t<T::value, typename all_of<XS...>::value, false_>;
-};
-
-template <typename T>
-struct all_of<T> {
-    using value = std::conditional_t<T::value, true_, false_>;
+struct all_of {
+    using value = std::conditional_t<(T::value && ...), true_, false_>;
 };
 
 }
