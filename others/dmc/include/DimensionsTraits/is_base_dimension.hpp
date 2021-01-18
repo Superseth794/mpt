@@ -9,6 +9,7 @@
 #define is_base_dimension_h
 
 #include "../Dimension.hpp"
+#include "../Dimensions.hpp"
 
 #include "../../../../include/Math/Number.hpp"
 
@@ -25,7 +26,7 @@ struct is_base_dimension<dim::base_meter> {
 };
 
 template <>
-struct is_base_dimension<dim::base_kilogramme> {
+struct is_base_dimension<dim::base_kilogram> {
     using value = mpt::true_;
 };
 

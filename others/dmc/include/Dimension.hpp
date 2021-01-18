@@ -14,25 +14,12 @@
 #include "../../../include/Math/Number.hpp"
 #include "../../../include/utility/all_of.hpp"
 
-namespace dmc::dim {
-
-    // SI dimensions
-    struct base_ampere       {};
-    struct base_candela      {};
-    struct base_kelvin       {};
-    struct base_kilogramme   {};
-    struct base_meter        {};
-    struct base_mole         {};
-    struct base_second       {};
-
-}
-
-#include "DimensionsTraits/is_base_dimension.hpp"
-
 namespace dmc {
 
 template <typename ...T>
-struct dimension;
+struct dimension {
+    using sub_dimensions = mpt::list<T...>;
+};
 
 }
 
@@ -42,27 +29,14 @@ namespace dmc {
 
 template <typename name_t, typename degree_t>
 struct dimension<name_t, degree_t> {
-    using name = name_t;
-    using degree = degree_t;
+    using name      = name_t;
+    using degree    = degree_t;
     
 private:
-    using is_constructible = typename std::enable_if<is_single_dimension<dimension<name_t, degree_t>>::value::value, name_t>::type;
-};
-
-}
-
-namespace dmc {
-
-template <typename ...T>
-struct dimension {
-    using sub_dimensions = mpt::list<T...>;
-    
-private:
-    using is_constructibe =
-        typename std::enable_if<
-                    mpt::all_of<
-                        typename is_single_dimension<T>::value...
-                    >::value::value, mpt::list<T...>>::type;
+    using is_constructible = typename
+        std::enable_if<
+            is_single_dimension<dimension<name_t, degree_t>>::value::value,
+        name_t>::type;
 };
 
 }

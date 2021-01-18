@@ -8,6 +8,8 @@
 #ifndef is_single_dimension_h
 #define is_single_dimension_h
 
+#include "is_base_dimension.hpp"
+
 #include "../Dimension.hpp"
 
 #include "../../../../include/Math/is_number.hpp"
