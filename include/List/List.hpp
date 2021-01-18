@@ -16,7 +16,7 @@ template <typename ...T>
 struct list {};
 
 
-template <typename ...T>
+template <typename T>
 struct is_list {
     using value = false_;
 };
