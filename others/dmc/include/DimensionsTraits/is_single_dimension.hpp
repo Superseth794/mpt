@@ -14,6 +14,7 @@
 
 #include "../../../../include/Math/is_number.hpp"
 #include "../../../../include/Math/Number.hpp"
+#include "../../../../include/utility/and_.hpp"
 
 namespace dmc {
 
@@ -29,12 +30,11 @@ struct is_single_dimension<dimension<>> {
 
 template <typename name_t, typename degree>
 struct is_single_dimension<dimension<name_t, degree>> {
-    using value =
-        std::conditional_t<
-            is_base_dimension<name_t>::value::value && mpt::is_number<degree>::value::value, // use mpt::and
-            mpt::true_,
-            mpt::false_
-        >;
+    using value = typename
+        mpt::and_<
+            typename is_base_dimension<name_t>::value,
+            typename mpt::is_number<degree>::value
+        >::value;
 };
 
 }
