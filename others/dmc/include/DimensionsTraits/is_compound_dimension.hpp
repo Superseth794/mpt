@@ -13,16 +13,29 @@
 #include "is_single_dimension.hpp"
 #include "../Dimension.hpp"
 
+#include "../../../../include/utility/all_of.hpp"
+#include "../../../../include/utility/or_.hpp"
+
 namespace dmc {
 
-template <typename ...T>
+template <typename T>
 struct is_compound_dimension {
+    using value = mpt::false_;
+}; // remove implem
+
+template <>
+struct is_compound_dimension<dimension<>> {
     using value = mpt::false_;
 };
 
 template <typename ...T>
 struct is_compound_dimension<dimension<T...>> {
-    using value = std::conditional_t<!is_single_dimension<dimension<T...>>::value::value, mpt::true_, mpt::false_>;
+    using value = typename mpt::all_of<
+                    typename mpt::or_<
+                        typename is_single_dimension<T>::value,
+                        typename is_compound_dimension<T>::value
+                        >::value...
+                    >::value;
 };
 
 }

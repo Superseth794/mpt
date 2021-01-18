@@ -20,11 +20,19 @@ struct is_single_dimension {
     using value = mpt::false_;
 };
 
+template <>
+struct is_single_dimension<dimension<>> {
+    using value = mpt::true_;
+};
+
 template <typename name_t, typename degree>
 struct is_single_dimension<dimension<name_t, degree>> {
-    using value = std::conditional_t<
-                    is_base_dimension<name_t>::value::value && mpt::is_number<degree>::value::value
-                , mpt::true_, mpt::false_>;
+    using value =
+        std::conditional_t<
+            is_base_dimension<name_t>::value::value && mpt::is_number<degree>::value::value, // use mpt::and
+            mpt::true_,
+            mpt::false_
+        >;
 };
 
 }
