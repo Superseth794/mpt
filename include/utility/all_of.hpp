@@ -10,13 +10,16 @@
 
 #include <type_traits>
 
-# include "../Math/Number.hpp"
+#include "../List/List.hpp"
+#include "../Math/Number.hpp"
+#include "../utility/evaluate.hpp"
 
 namespace mpt {
 
-template <typename ...T>
+template <typename Pred>
 struct all_of {
-    using value = std::conditional_t<(T::value && ...), true_, false_>;
+    template <typename ...T>
+    using f = typename evaluate<(Pred::template f<T>::value && ...)>::value;
 };
 
 }
