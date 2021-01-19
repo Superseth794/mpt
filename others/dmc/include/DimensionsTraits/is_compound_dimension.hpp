@@ -13,7 +13,7 @@
 #include "is_single_dimension.hpp"
 #include "../Dimension.hpp"
 
-#include "../../../../include/utility/all_of.hpp"
+#include "../../../../include/utility/and_.hpp"
 #include "../../../../include/utility/or_.hpp"
 
 namespace dmc {
@@ -31,7 +31,7 @@ struct is_compound_dimension<dimension<>> {
 template <typename ...T>
 struct is_compound_dimension<dimension<T...>> {
     using value = typename
-        mpt::all_of<typename
+        mpt::and_<typename
             mpt::or_<
                 typename is_single_dimension<T>::value,
                 typename is_compound_dimension<T>::value
