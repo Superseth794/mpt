@@ -15,6 +15,10 @@ namespace mpt {
 template <typename ...T>
 struct list {};
 
+struct listify {
+    template <typename ...T>
+    using f = list<T...>;
+};
 
 template <typename T>
 struct is_list {
