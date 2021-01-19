@@ -10,13 +10,14 @@
 
 #include <type_traits>
 
+#include "evaluate.hpp"
 #include "../Math/Number.hpp"
 
 namespace mpt {
 
 template <typename ...T>
 struct or_ {
-    using value = std::conditional_t<(T::value || ...), true_, false_>;
+    using value = typename evaluate<(T::value || ...)>::value;
 };
 
 }
