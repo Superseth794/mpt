@@ -21,7 +21,7 @@ namespace dmc {
 template <typename T>
 struct is_compound_dimension {
     using value = mpt::false_;
-}; // remove implem
+};
 
 template <>
 struct is_compound_dimension<dimension<>> {
@@ -30,12 +30,13 @@ struct is_compound_dimension<dimension<>> {
 
 template <typename ...T>
 struct is_compound_dimension<dimension<T...>> {
-    using value = typename mpt::all_of<
-                    typename mpt::or_<
-                        typename is_single_dimension<T>::value,
-                        typename is_compound_dimension<T>::value
-                        >::value...
-                    >::value;
+    using value = typename
+        mpt::all_of<typename
+            mpt::or_<
+                typename is_single_dimension<T>::value,
+                typename is_compound_dimension<T>::value
+            >::value...
+        >::value;
 };
 
 }
