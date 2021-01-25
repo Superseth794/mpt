@@ -8,7 +8,7 @@
 #ifndef evaluate_h
 #define evaluate_h
 
-#include "../Math/Number.hpp"
+#include "../math/number.hpp"
 
 namespace mpt {
 
@@ -27,4 +27,4 @@ struct evaluate<false> {
 
 }
 
-#endif /* evaluate_h */
+#endif /* evaluate_hpp */

@@ -12,9 +12,9 @@
 
 #include "is_single_dimension.hpp"
 #include "is_compound_dimension.hpp"
-#include "../Dimension.hpp"
+#include "../dimension.hpp"
 
-#include "../../../../include/Math/Number.hpp"
+#include "../../../../include/math/number.hpp"
 #include "../../../../include/utility/all_of.hpp"
 #include "../../../../include/utility/or_.hpp"
 
@@ -37,4 +37,4 @@ struct is_dimension<dimension<T...>> {
 
 }
 
-#endif /* is_dimension_h */
+#endif /* is_dimension_hpp */

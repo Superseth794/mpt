@@ -1,5 +1,5 @@
 //
-//  Test.hpp
+//  test.hpp
 //  mpt
 //
 //  Created by Jaraxus on 25/01/2021.
@@ -14,4 +14,4 @@
 
 #define TEST_CASE(x) void test_case_##x()
 
-#endif /* Test_hpp */
+#endif /* test_hpp */

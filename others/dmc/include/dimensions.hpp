@@ -1,21 +1,21 @@
 //
-//  Dimensions.hpp
+//  dimensions.hpp
 //  mpt
 //
 //  Created by Jaraxus on 22/10/2020.
 //
 
-#ifndef Dimensions_hpp
-#define Dimensions_hpp
+#ifndef dimensions_hpp
+#define dimensions_hpp
 
-#include "../../../include/Math/Number.hpp"
+#include "../../../include/math/number.hpp"
 
 #define DMC_DIM_GENERATE_DIMENSION_POSITIVE_POWER(_dimension_name, _dimension_symbol, _degree) \
-    using _dimension_name##_degree      = dimension<base_##_dimension_name, mpt::Number<_degree>>; \
+    using _dimension_name##_degree      = dimension<base_##_dimension_name, mpt::number<_degree>>; \
     using _dimension_symbol##_degree    = _dimension_name##_degree;
 
 #define DMC_DIM_GENERATE_DIMENSION_NEGATIVE_POWER(_dimension_name, _dimension_symbol, _degree) \
-    using _dimension_name##_##_degree   = dimension<base_##_dimension_name, mpt::Number<-_degree>>; \
+    using _dimension_name##_##_degree   = dimension<base_##_dimension_name, mpt::number<-_degree>>; \
     using _dimension_symbol##_##_degree = _dimension_name##_##_degree;
 
 #define DMC_DIM_GENERATE_DIMENSION_POWERS(_dimension_name, _dimension_symbol) \
@@ -53,25 +53,25 @@ using null          = dimension<>;
 
 
 // SI dimensions
-using ampere        = dimension<base_ampere, mpt::Number<1>>;
+using ampere        = dimension<base_ampere, mpt::number<1>>;
 using A             = ampere;
 
-using candela       = dimension<base_candela, mpt::Number<1>>;
+using candela       = dimension<base_candela, mpt::number<1>>;
 using cd            = candela;
 
-using kelvin        = dimension<base_kelvin, mpt::Number<1>>;
+using kelvin        = dimension<base_kelvin, mpt::number<1>>;
 using K             = kelvin;
 
-using kilogram      = dimension<base_kilogram, mpt::Number<1>>;
+using kilogram      = dimension<base_kilogram, mpt::number<1>>;
 using kg            = kilogram;
 
-using meter         = dimension<base_meter, mpt::Number<1>>;
+using meter         = dimension<base_meter, mpt::number<1>>;
 using m             = meter;
 
-using mole          = dimension<base_mole, mpt::Number<1>>;
+using mole          = dimension<base_mole, mpt::number<1>>;
 using mol           = mole;
 
-using second        = dimension<base_second, mpt::Number<1>>;
+using second        = dimension<base_second, mpt::number<1>>;
 using s             = second;
 
 
@@ -159,6 +159,6 @@ using Wb            = weber;
 #undef DMC_DIM_GENERATE_DIMENSION_NEGATIVE_POWER
 #undef DMC_DIM_GENERATE_DIMENSION_POSITIVE_POWER
 
-#include "Dimension.hpp"
+#include "dimension.hpp"
 
-#endif /* Dimensions_hpp */
+#endif /* dimensions_hpp */

@@ -10,8 +10,8 @@
 
 #include <type_traits>
 
-#include "../List/List.hpp"
-#include "../Math/Number.hpp"
+#include "../list/list.hpp"
+#include "../math/number.hpp"
 #include "../utility/evaluate.hpp"
 
 namespace mpt {
@@ -24,4 +24,4 @@ struct all_of {
 
 }
 
-#endif /* all_of_h */
+#endif /* all_of_hpp */

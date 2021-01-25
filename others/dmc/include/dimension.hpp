@@ -1,17 +1,17 @@
 //
-//  Dimention.hpp
+//  dimention.hpp
 //  mpt
 //
 //  Created by Jaraxus on 22/10/2020.
 //
 
-#ifndef Dimention_hpp
-#define Dimention_hpp
+#ifndef dimention_hpp
+#define dimention_hpp
 
 #include <type_traits>
 
-#include "../../../include/List/List.hpp"
-#include "../../../include/Math/Number.hpp"
+#include "../../../include/list/list.hpp"
+#include "../../../include/math/number.hpp"
 #include "../../../include/utility/all_of.hpp"
 
 namespace dmc {
@@ -23,7 +23,7 @@ struct dimension {
 
 }
 
-#include "DimensionsTraits/is_single_dimension.hpp"
+#include "dimensionsTraits/is_single_dimension.hpp"
 
 namespace dmc {
 
@@ -41,4 +41,4 @@ private:
 
 }
 
-#endif /* Dimention_h */
+#endif /* dimention_hpp */

@@ -8,10 +8,10 @@
 #ifndef is_base_dimension_h
 #define is_base_dimension_h
 
-#include "../Dimension.hpp"
-#include "../Dimensions.hpp"
+#include "../dimension.hpp"
+#include "../dimensions.hpp"
 
-#include "../../../../include/Math/Number.hpp"
+#include "../../../../include/math/number.hpp"
 
 namespace dmc {
 
@@ -57,4 +57,4 @@ struct is_base_dimension<dim::base_candela> {
 
 }
 
-#endif /* is_base_dimension_h */
+#endif /* is_base_dimension_hpp */

@@ -1,12 +1,12 @@
 //
-//  Number.hpp
+//  number.hpp
 //  mpt
 //
 //  Created by Jaraxus on 16/10/2020.
 //
 
-#ifndef Number_h
-#define Number_h
+#ifndef number_h
+#define number_h
 
 #include <cstdint>
 
@@ -15,13 +15,13 @@ namespace mpt {
 using int_      = std::intmax_t;
 
 template <int_ N>
-struct Number {
+struct number {
     static constexpr int_ value = N;
 };
 
-using false_    = Number<0>;
-using true_     = Number<1>;
+using false_    = number<0>;
+using true_     = number<1>;
 
 } // mpt
 
-#endif /* Number_h */
+#endif /* number_hpp */

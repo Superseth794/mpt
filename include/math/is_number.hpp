@@ -8,7 +8,7 @@
 #ifndef is_number_h
 #define is_number_h
 
-#include "Number.hpp"
+#include "number.hpp"
 
 namespace mpt {
 
@@ -18,10 +18,10 @@ struct is_number {
 };
 
 template <int_ N>
-struct is_number<Number<N>> {
+struct is_number<number<N>> {
     using value = true_;
 };
 
 }
 
-#endif /* is_number_h */
+#endif /* is_number_hpp */

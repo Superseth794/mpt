@@ -8,7 +8,7 @@
 #ifndef is_same_hpp
 #define is_same_hpp
 
-#include "../Math/Number.hpp"
+#include "../math/number.hpp"
 
 namespace mpt {
 
@@ -24,4 +24,4 @@ struct is_same<T, T> {
 
 }
 
-#endif /* is_same_h */
+#endif /* is_same_hpp */

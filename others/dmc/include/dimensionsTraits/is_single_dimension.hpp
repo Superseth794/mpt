@@ -10,10 +10,10 @@
 
 #include "is_base_dimension.hpp"
 
-#include "../Dimension.hpp"
+#include "../dimension.hpp"
 
-#include "../../../../include/Math/is_number.hpp"
-#include "../../../../include/Math/Number.hpp"
+#include "../../../../include/math/is_number.hpp"
+#include "../../../../include/math/number.hpp"
 #include "../../../../include/utility/and_.hpp"
 
 namespace dmc {
@@ -39,4 +39,4 @@ struct is_single_dimension<dimension<name_t, degree>> {
 
 }
 
-#endif /* is_single_dimension_h */
+#endif /* is_single_dimension_hpp */

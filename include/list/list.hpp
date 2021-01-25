@@ -1,14 +1,14 @@
 //
-//  List.hpp
+//  list.hpp
 //  mpt
 //
 //  Created by Jaraxus on 17/10/2020.
 //
 
-#ifndef List_h
-#define List_h
+#ifndef list_h
+#define list_h
 
-#include "../Math/Number.hpp"
+#include "../math/number.hpp"
 
 namespace mpt {
 
@@ -32,4 +32,4 @@ struct is_list<list<T...>> {
 
 } // mpt
 
-#endif /* List_h */
+#endif /* list_hpp */

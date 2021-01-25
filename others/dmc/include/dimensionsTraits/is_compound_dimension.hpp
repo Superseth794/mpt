@@ -11,7 +11,7 @@
 #include <type_traits>
 
 #include "is_single_dimension.hpp"
-#include "../Dimension.hpp"
+#include "../dimension.hpp"
 
 #include "../../../../include/utility/and_.hpp"
 #include "../../../../include/utility/or_.hpp"
@@ -41,4 +41,4 @@ struct is_compound_dimension<dimension<T...>> {
 
 }
 
-#endif /* is_compound_dimension_h */
+#endif /* is_compound_dimension_hpp */

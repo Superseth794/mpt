@@ -8,9 +8,9 @@
 #ifndef DimentionalValue_h
 #define DimentionalValue_h
 
-#include "Dimension.hpp"
-#include "DimensionsTraits/is_convertitble.hpp"
-#include "DimensionsTraits/is_dimension.hpp"
+#include "dimension.hpp"
+#include "dimensionsTraits/is_convertitble.hpp"
+#include "dimensionsTraits/is_dimension.hpp"
 
 namespace dmc {
 
@@ -50,4 +50,4 @@ private:
 
 #include "DimensionalValue.inl"
 
-#endif /* DimentionalValue_h */
+#endif /* DimentionalValue_hpp */

@@ -29,4 +29,4 @@ Value_T const& DimensionalValue<Value_T, Dimension_T>::getValue() const {
 
 }
 
-#endif /* DimensionalValue_h */
+#endif /* DimensionalValue_hpp */

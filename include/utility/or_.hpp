@@ -11,7 +11,7 @@
 #include <type_traits>
 
 #include "evaluate.hpp"
-#include "../Math/Number.hpp"
+#include "../math/number.hpp"
 
 namespace mpt {
 
@@ -22,4 +22,4 @@ struct or_ {
 
 }
 
-#endif /* or_h */
+#endif /* or_hpp */
