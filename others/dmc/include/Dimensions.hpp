@@ -5,10 +5,10 @@
 //  Created by Jaraxus on 22/10/2020.
 //
 
-#ifndef Dimensions_h
-#define Dimensions_h
+#ifndef Dimensions_hpp
+#define Dimensions_hpp
 
-#include "Dimension.hpp"
+#include "../../../include/Math/Number.hpp"
 
 #define DMC_DIM_GENERATE_DIMENSION_POSITIVE_POWER(_dimension_name, _dimension_symbol, _degree) \
     using _dimension_name##_degree      = dimension<base_##_dimension_name, mpt::Number<_degree>>; \
@@ -26,6 +26,15 @@
     DMC_DIM_GENERATE_DIMENSION_NEGATIVE_POWER(_dimension_name, _dimension_symbol, 2) \
     DMC_DIM_GENERATE_DIMENSION_NEGATIVE_POWER(_dimension_name, _dimension_symbol, 3) \
     DMC_DIM_GENERATE_DIMENSION_NEGATIVE_POWER(_dimension_name, _dimension_symbol, 4)
+
+#define TEST_MACRO class Bar {};
+
+namespace dmc {
+
+template <typename ...>
+struct dimension;
+
+}
 
 namespace dmc::dim {
 
@@ -150,4 +159,6 @@ using Wb            = weber;
 #undef DMC_DIM_GENERATE_DIMENSION_NEGATIVE_POWER
 #undef DMC_DIM_GENERATE_DIMENSION_POSITIVE_POWER
 
-#endif /* Dimensions_h */
+#include "Dimension.hpp"
+
+#endif /* Dimensions_hpp */
