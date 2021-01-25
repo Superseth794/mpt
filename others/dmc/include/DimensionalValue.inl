@@ -10,20 +10,20 @@
 
 namespace dmc {
 
-template <typename T, typename ...Dim_T>
-DimensionalValue<T, Dim_T...>::DimensionalValue(DimensionalValue<T, Dim_T...> const& value) :
-m_value(value.m_value)
-{
+template <typename Value_T, typename Dimension_T>
+template <typename DimensionalValue_T>
+constexpr DimensionalValue<Value_T, Dimension_T>::DimensionalValue(DimensionalValue_T const& value) {
+    // TODO: static_assert to check that dimensions are compatibles
 }
 
-template <typename T, typename ...Dim_T>
-DimensionalValue<T, Dim_T...>::DimensionalValue(T value) :
-m_value(std::move(value))
-{
+template <typename Value_T, typename Dimension_T>
+template <typename DimensionalValue_T>
+constexpr DimensionalValue<Value_T, Dimension_T>::DimensionalValue(DimensionalValue_T && value) {
+    // TODO: static_assert to check that dimensions are compatibles
 }
 
-template <typename T, typename ...Dim_T>
-T const& DimensionalValue<T, Dim_T...>::getValue() const {
+template <typename Value_T, typename Dimension_T>
+Value_T const& DimensionalValue<Value_T, Dimension_T>::getValue() const {
     return m_value;
 }
 

@@ -8,20 +8,42 @@
 #ifndef DimentionalValue_h
 #define DimentionalValue_h
 
+#include "Dimension.hpp"
+#include "DimensionsTraits/is_convertitble.hpp"
+#include "DimensionsTraits/is_dimension.hpp"
+
 namespace dmc {
 
-template <typename T, typename ... Dim_T>
+template <typename Value_T, typename Dimension_T>
 class DimensionalValue {
+    using Value     = Value_T;
+    using Dimension = Dimension_T;
+    
+    static_assert(is_dimension<Dimension_T>::value::value, "Second template paramter must be a dmc::dimension");
+    
 public:
-    DimensionalValue(T value);
-    DimensionalValue(DimensionalValue<T, Dim_T...> const& value);
-    
+    constexpr DimensionalValue(Value value) noexcept = default;
+
+    constexpr DimensionalValue(DimensionalValue const& value) noexcept = default;
+
+    template <typename DimensionalValue_T>
+    constexpr DimensionalValue(DimensionalValue_T const& value);
+
+    constexpr DimensionalValue(DimensionalValue && value) noexcept = default;
+
+    template <typename DimensionalValue_T>
+    constexpr DimensionalValue(DimensionalValue_T && value);
+
     ~DimensionalValue() = default;
-    
-    inline T const& getValue() const;
+
+    constexpr DimensionalValue& operator=(Dimension const& value) noexcept = default;
+
+    constexpr DimensionalValue& operator=(Dimension && value) noexcept = default;
+
+    inline Value const& getValue() const;
     
 private:
-    T m_value;
+    Value m_value;
 };
 
 }
